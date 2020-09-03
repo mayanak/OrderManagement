@@ -5,7 +5,8 @@ namespace OrderManagement
 {
     public class Program
     {
-       string paymentFor;
+          string paymentFor;
+	  string payslipDetails;
           console.WriteLine(" Please enter product type");
           paymentFor=console.ReadLine();
           ProductAbstract objProduct=new ConcreteProuduct();
@@ -15,7 +16,7 @@ namespace OrderManagement
 		  {
 			  
 			 IPayamentRepository objBook=objProduct.GetPaymentDetailsByType(paymentFor); 
-			 string payslipDetails=objBook.GeneratePaySlip();
+			  payslipDetails=objBook.GeneratePaySlip();
 			 objBook.GetCommisionDetails();
 			 
 			 Console.WriteLine(payslipDetails);
@@ -24,15 +25,21 @@ namespace OrderManagement
 		  {
 			  
 			  IPayamentRepository objPhysicalProduct=objProduct.GetPaymentDetailsByType(paymentFor); 
-			 string payslipDetails=objPhysicalProduct.GeneratePaySlip();
+			  payslipDetails=objPhysicalProduct.GeneratePaySlip();
 			 objPhysicalProduct.GetCommisionDetails();
 		  }
-		    else if (paymentFor=="PhysicalProudct")
+		   else if (paymentFor=="MemberShip")
 		  {
 			  
-			  IPayamentRepository objPhysicalProduct=objProduct.GetPaymentDetailsByType(paymentFor); 
-			 string payslipDetails=objPhysicalProduct.GeneratePaySlip();
-			 objPhysicalProduct.GetCommisionDetails();
+			  IPayamentRepository objMemberShip=objAMembership.GetPaymentDetailsByType(paymentFor); 
+			 string payslipDetails=objMemberShip.GeneratePaySlip();
+			 //if member need to be activate need call below method
+			 objMemberShip.ActivateMember();
+			 
+			 //for member updatetion
+			 objMemberShip.UpgrateMemberShip();
+			 //send Activation/updatetion mail to member
+			 objMemberShip.SendMail();
 		  }
 		  
         }
