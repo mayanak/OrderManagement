@@ -11,9 +11,14 @@ namespace PaymentGateWay
            console.Writeline(" Member added sucessfully");
         }
         
-       public void GetCommisionDetails()
+       public void SendMemberShipMail()
        {
-            console.Writeline(" Book Order commision percentage is 4%");
+            console.Writeline(" Mail sucessfully sent to member");
+       }
+       
+       public void UpgradeMemberPlan(int memberId)
+       {
+               console.Writeline(" Membership sucessfully added for member id {0}",memberId);
        }
        
      }
