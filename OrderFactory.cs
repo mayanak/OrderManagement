@@ -26,7 +26,7 @@ public abstract class MemberShipAbstract
  public abstract IMemeberShipRepository GetPaymentDetailsByType(string type);
 }
 
-public class ConcereProuduct :ProductAbstract
+public class ConcreteProuduct :ProductAbstract
 {
     publick override IPayamentRepository GetPaymentDetailsByType(string type);
     {
@@ -34,7 +34,9 @@ public class ConcereProuduct :ProductAbstract
       {
         case "Book":
           return new Book();
-          case "PhysicalProduct":
+
+          case "PhysicalProudct":
+
           return new PhysicalProudct();
           default :
           return new Book();
@@ -57,7 +59,7 @@ public class ConcereMemberShip :MemberShipAbstract
     }
 }
 
-public class ConcereMemberShip :MemberShipAbstract
+public class ConcreteMemberShip :MemberShipAbstract
 {
     publick override IMemeberShipRepository GetPaymentDetailsByType(string type);
     {
