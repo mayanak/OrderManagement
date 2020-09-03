@@ -19,7 +19,7 @@ namespace PaymentGateWay
 // Product and MemberShip Abstract class
 public abstract class ProductAbstract
 {
- public abstract IPayamentRepository GetPaymentDetailsByType(stringt type);
+ public abstract IPayamentRepository GetPaymentDetailsByType(string type);
 }
 public abstract class MemberShipAbstract
 {
@@ -34,10 +34,24 @@ public class ConcereProuduct :ProductAbstract
       {
         case "Book":
           return new Book();
-          case "Book":
+          case "PhysicalProduct":
           return new PhysicalProudct();
           default :
           return new Book();
+        
+      }
+    }
+}
+public class ConcereMemberShip :MemberShipAbstract
+{
+    publick override IMemeberShipRepository GetPaymentDetailsByType(string type);
+    {
+      switch(type)
+      {
+        case "MemberShip":
+          return new MemberShip();
+          default :
+          return new MemberShip();
         
       }
     }
