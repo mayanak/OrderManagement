@@ -34,10 +34,26 @@ public class ConcreteProuduct :ProductAbstract
       {
         case "Book":
           return new Book();
+
           case "PhysicalProudct":
+
           return new PhysicalProudct();
           default :
           return new Book();
+        
+      }
+    }
+}
+public class ConcereMemberShip :MemberShipAbstract
+{
+    publick override IMemeberShipRepository GetPaymentDetailsByType(string type);
+    {
+      switch(type)
+      {
+        case "MemberShip":
+          return new MemberShip();
+          default :
+          return new MemberShip();
         
       }
     }
