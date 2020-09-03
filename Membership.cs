@@ -18,7 +18,7 @@ namespace PaymentGateWay
        
        public void UpgradeMemberPlan(int memberId)
        {
-               console.Writeline(" Membership sucessfully added for member id {0}",memberId);
+           console.Writeline(" Membership sucessfully added for member id {0}",memberId);
        }
        
      }
